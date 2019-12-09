@@ -1,4 +1,9 @@
 #include "lists.h"
+/**
+ * check_cycle - function
+ * @list: parameter
+ * Return: 0
+ */
 int check_cycle(listint_t *list)
 {
 listint_t *m, *n;
