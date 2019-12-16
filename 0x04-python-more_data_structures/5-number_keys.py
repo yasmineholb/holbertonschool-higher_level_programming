@@ -2,5 +2,5 @@
 def number_keys(a_dictionary):
     s = 0
     for i in a_dictionary:
-        s +=1 
+        s += 1
     return(s)
