@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
-    for i in my_list:
-        for i in range (0, x):
-            try:
-                print("{:d}".format(i), end = "")
-            except KeyError:
-                print("hell")
+    m = 0
+    try:
+        for i, m in zip(my_list, [0, x]):
+            print("{:d}".format(m))
+    except:
+        print("hell")
