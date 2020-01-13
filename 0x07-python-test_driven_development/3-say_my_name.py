@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """
-this is an add module
-it add integers
+this is a name function
+it prints the name
 
 """
+
+
 def say_my_name(first_name, last_name=""):
     """
-this is the add function
+this is the name function
     """
     if type(first_name) is not str:
         raise TypeError("first_name must be a string")

@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """
-this is an add module
-it add integers
+this is an square module
+it prints squares
 
 """
+
+
 def print_square(size):
     """
-this is the add function
+this is the square function
     """
     if type(size) is not int:
         raise TypeError("size must be an integer")
