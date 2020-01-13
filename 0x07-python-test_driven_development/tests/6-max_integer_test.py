@@ -17,4 +17,8 @@ this is the add function
       def max_string(self):
             self.assertEqual(max_integer(['hh', 'hhh', 'hhhh']), 'hhhh')
 
-  
+      def max_empty(self):
+            self.assertEqual(max_integer(), None)
+            
+      def max_empty(self):
+            self.assertEqual(max_integer([]), None)

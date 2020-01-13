@@ -28,11 +28,33 @@ third test:
 
 tt test:
 
+    >>> add_integer("a", "ee")
+    Traceback (most recent call last):
+               ...
+    TypeError: a must be an integer
+
+tt2 test:
+
     >>> add_integer("a", 2)
     Traceback (most recent call last):
                ...
     TypeError: a must be an integer
 
+
+tt3 test:
+
+    >>> add_integer("abb", 2)
+    Traceback (most recent call last):
+               ...
+    TypeError: a must be an integer
+
+tt4 test:
+
+    >>> add_integer("", 0)
+    Traceback (most recent call last):
+               ...
+    TypeError: a must be an integer
+    
 ttt test:
 
     >>> add_integer(5, "tet")
