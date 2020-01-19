@@ -1,24 +1,23 @@
 #!/usr/bin/python3
-
-
 class Rectangle:
     """
-this is Rectangle function
+this is a class rectangle
+
 
     """
     def __init__(self, width=0, height=0):
-        """ init function             """
-        self.height = height
-        self.width = width
+        """     init function         """
+        self.__height = height
+        self.__width = width
 
     @property
     def height(self):
-        """   height function     """
-        self.__height
+        """  height function          """
+        return self.__height
 
     @height.setter
     def height(self, value):
-        """ height setter             """
+        """   height fn            """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
@@ -28,18 +27,19 @@ this is Rectangle function
 
     @property
     def width(self):
-        """ width property             """
+        """ width fn             """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """      width setter fn   """
+        """ width fn             """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
+
 
     def area(self):
         """   area function             """
