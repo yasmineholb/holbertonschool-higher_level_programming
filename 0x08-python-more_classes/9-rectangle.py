@@ -10,19 +10,19 @@ the rectangle class
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """   init fn      """
+        """     init fn     """
         self.__width = width
         self.__height = height
         Rectangle.number_of_instances += 1
 
     @property
     def height(self):
-        """     height fn   """
+        """     height fn        """
         self.__height
 
     @height.setter
     def height(self, value):
-        """   height fn           """
+        """      height fn        """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
@@ -32,12 +32,12 @@ the rectangle class
 
     @property
     def width(self):
-        """    width fn        """
+        """  width fn        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """       width fn        """
+        """   width fn        """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -46,18 +46,18 @@ the rectangle class
             self.__width = value
 
     def area(self):
-        """   area fn             """
+        """    area fn     """
         return self.__width * self.__height
 
     def perimeter(self):
-        """perimeter fn        """
+        """      perimeter fn       """
         if (self.__width == 0) or (self.__height == 0):
             self.perimeter = 0
         else:
             return (self.__width + self.__height) * 2
 
     def __str__(self):
-        """       str fn     """
+        """   str fn           """
         if (self.__width == 0) or (self.__height == 0):
             return("")
         else:
@@ -70,17 +70,17 @@ the rectangle class
         return("".join(s))
 
     def __repr__(self):
-        """  repr fn                """
+        """  repr fn         """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
-        """ del fn        """
+        """     del fn        """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """  bigger/equal fn        """
+        """   bigger/ equal fn    """
         if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         elif type(rect_2) is not Rectangle:
