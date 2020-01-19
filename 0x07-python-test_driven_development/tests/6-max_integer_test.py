@@ -16,6 +16,9 @@ class TestStringMethods(unittest.TestCase):
 
     def test_element(self):
         self.assertEqual(max_integer([1]), 1)
+
+    def test_element2(self):
+        self.assertEqual(max_integer([4, 3, 2, 1]), 4)
         
     def test_string(self):
         self.assertEqual(max_integer(['hh', 'hhh', 'hhhh']), 'hhhh')
