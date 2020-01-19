@@ -8,8 +8,8 @@ this is Rectangle function
     """
     def __init__(self, width=0, height=0):
         """ init function             """
-        self.__height = height
-        self.__width = width
+        self.height = height
+        self.width = width
 
     @property
     def height(self):
