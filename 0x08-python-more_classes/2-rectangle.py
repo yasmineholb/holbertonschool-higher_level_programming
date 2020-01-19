@@ -40,7 +40,6 @@ this is a class rectangle
         else:
             self.__width = value
 
-
     def area(self):
         """   area function             """
         return self.__width * self.__height
