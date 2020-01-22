@@ -7,5 +7,6 @@
 
 def read_file(filename=""):
     """ read file fn """
-    with open(filename, mode="r", encoding="utf-8") as f:
-        print(f.read())
+    with open(filename, encoding="utf-8") as f:
+        for i in f:
+            print(i, end="")
