@@ -26,18 +26,16 @@ class Base:
         else:
             return(json.dumps(list_dictionaries))
 
+    @classmethod
     def save_to_file(cls, list_objs):
         """ this is save fn """
-        ob = []
-        if list_objs is None or len(list_objs) is 0:
-            ob = []
+        if list_objs is None or list_objs == []:
+            js = "[]"
         else:
-            for m in list_objs:
-                ob.append(m.to_dictionary())
-        js = Base.to_json_string(ob)
-        with open("{}.json".format(cls.__name__), mode='w', encoding='utf-8')\
-                as file:
-            file.write(js)
+            js = cls.to_json_string([o.to_dictionary() for o in list_objs])
+        fil = cls.__name__ + ".json"
+        with open(fil, 'w') as f:
+                f.write(js)
 
     def from_json_string(json_string):
         """ from json fn """
@@ -46,6 +44,7 @@ class Base:
         else:
             return(json.loads(json_string))
 
+    @classmethod
     def create(cls, **dictionary):
         """ create fn """
         if cls.__name__ == "Rectangle":
