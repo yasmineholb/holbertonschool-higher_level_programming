@@ -1,23 +1,29 @@
 #!/usr/bin/python3
 """
+this is the rectangle module
 """
 from models.base import Base
 
+
 class Rectangle(Base):
+    """ this is the rectangle class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ this is the init fn """
         self.width = width
         self.height = height
         self.x = x
         self.y = y
         super().__init__(id)
-        
+
     @property
     def width(self):
+        """ the width """
         return self.__width
 
     @width.setter
     def width(self, width):
+        """ the width setter """
         self.__width = width
         if type(width) is not int:
             raise TypeError("width must be an integer")
@@ -26,10 +32,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """ the height height"""
         return self.__height
 
     @height.setter
     def height(self, height):
+        """ the height setter """
         self.__height = height
         if type(height) is not int:
             raise TypeError("height must be an integer")
@@ -38,10 +46,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """ this is x """
         return self.__x
 
     @x.setter
     def x(self, x):
+        """ the x setter"""
         self.__x = x
         if type(x) is not int:
             raise TypeError("x must be an integer")
@@ -50,21 +60,24 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """ this is y """
         return self.__y
 
     @y.setter
     def y(self, y):
+        """ this is y setter """
         self.__y = y
         if type(y) is not int:
             raise TypeError("y must be an integer")
         elif y < 0:
             raise ValueError("y must be > 0")
 
-        
     def area(self):
+        """ the area """
         return self.__height * self.__width
 
     def display(self):
+        """ the display fn """
         for i in range(self.__y):
             print()
         for i in range(self.__height):
@@ -75,9 +88,12 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        return("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+        """ the str fn """
+        return("[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
+        """ update fn """
         if len(args) is 0:
             for i, j in kwargs.items():
                 if i == "id":
@@ -108,7 +124,11 @@ class Rectangle(Base):
                 self.__y = k[4]
 
     def to_dictionary(self):
-        return Rectangle.__dict__(self.id, self.width, self.height, self.x, self.y)
-
-    
-    
+        """ the dict fn """
+        di = {}
+        di['id'] = self.id
+        di['width'] = self.width
+        di['height'] = self.height
+        di['x'] = self.x
+        di['y'] = self.y
+        return di
