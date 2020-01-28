@@ -24,33 +24,26 @@ class Square(Rectangle):
         super(Square, self.__class__).width.fset(self, size)
 
     def update(self, *args, **kwargs):
-        """ this is the update fn """
-        if len(args) is 0:
-            for i, j in kwargs.items():
-                if i == "id":
-                    self.id = kwargs.get(i)
-                if i == "size":
-                    self.__size = kwargs.get(i)
-                if i == "x":
-                    self.__x = kwargs.get(i)
-                if i == "y":
-                    self.__y = kwargs.get(i)
+        """ the update fn """
+        if args is not None and len(args) != 0:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) > 1:
+                self.size = args[1]
+            if len(args) > 2:
+                self.x = args[2]
+            if len(args) > 3:
+                self.y = args[3]
         else:
-            k = []
-            for s in args:
-                k.append(s)
-            if len(k) == 0:
-                pass
-            if len(k) > 0:
-                self.id = k[0]
-            if len(k) > 1:
-                self.__width = k[1]
-            if len(k) > 2:
-                self.__height = k[2]
-            if len(k) > 3:
-                self.__x = k[3]
-            if len(k) > 4:
-                self.__y = k[4]
+            for k, value in kwargs.items():
+                if k == "id":
+                    self.id = value
+                if k == "size":
+                    self.size = value
+                if k == "x":
+                    self.x = value
+                if k == "y":
+                    self.y = value
 
     def to_dictionary(self):
         """ the dict fn """
