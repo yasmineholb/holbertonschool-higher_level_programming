@@ -18,11 +18,11 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """ this is to_json fn """
-        m = "[]"
-        if list_dictionaries is None or len(list_dictionaries) == 0:
-            return m
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
         else:
             return(json.dumps(list_dictionaries))
 
@@ -45,3 +45,12 @@ class Base:
             return []
         else:
             return(json.loads(json_string))
+
+    def create(cls, **dictionary):
+        """ create fn """
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        else:
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
