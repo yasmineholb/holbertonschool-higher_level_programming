@@ -53,3 +53,13 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """this is the load fn """
+        try:
+            with open(cls.__name__ + ".json", "r") as fl:
+                ld = cls.from_json_string(fl.read())
+            return [cls.create(**j) for j in ld]
+        except:
+            return []
