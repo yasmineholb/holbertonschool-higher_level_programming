@@ -1,26 +1,30 @@
 #!/usr/bin/python3
+""" this is the square module """
+from models.rectangle import Rectangle
 
-from rectangle import Rectangle
 
 class Square(Rectangle):
-
+    """ this is the square class"""
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
-        
+
     def __str__(self):
-        return("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,  self.width))
+        """ this is the str fn """
+        return("[Square] ({}) {}/{} - {}".format(
+            self.id, self.x, self.y,  self.width))
 
     @property
     def size(self):
-        """  """
+        """ this is the size  """
         return super().width
 
     @size.setter
     def size(self, size):
-        """   """
+        """ this is the size setter """
         super(Square, self.__class__).width.fset(self, size)
 
     def update(self, *args, **kwargs):
+        """ this is the update fn """
         if len(args) is 0:
             for i, j in kwargs.items():
                 if i == "id":
@@ -48,7 +52,11 @@ class Square(Rectangle):
             if len(k) > 4:
                 self.__y = k[4]
 
-        
-
-        
-
+    def to_dictionary(self):
+        """ the dict fn """
+        di = {}
+        di['id'] = self.id
+        di['size'] = self.size
+        di['x'] = self.x
+        di['y'] = self.y
+        return di
