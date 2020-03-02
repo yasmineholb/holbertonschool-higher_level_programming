@@ -1,4 +1,5 @@
 -- task 16
-SELECT score, name
+SELECT *
 FROM second_table
-WHERE name <> '';
+WHERE name <> ''
+ORDER BY score DESC;
