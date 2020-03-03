@@ -1,5 +1,8 @@
 -- task 8
 SELECT id, name
-FROM cities, states
-WHERE states.name = California AND cities.state_id = states.id
-ORDER BY cities.id DESC;
+FROM cities
+WHERE state_id = (
+  SELECT id
+  FROM states
+  WHERE name = "California")
+ORDER BY cities.id ASC;
