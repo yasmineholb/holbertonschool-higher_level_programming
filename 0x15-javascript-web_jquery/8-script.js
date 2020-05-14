@@ -1,3 +1,4 @@
+const $ = window.$;
 const ur = 'https://swapi-api.hbtn.io/api/films/?format=json';
 $.get(ur, function (mov) {
   for (var i = 0; i < mov.results.length; i++) {
